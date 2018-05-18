@@ -13,6 +13,7 @@ public class ClientApp {
 		 */
 		Thread t1 = new Thread(new ConnectServerRunnable(), "connect");
 		t1.start();
-		LoginHandler.login();
+		LoginHandler loginHandler = new LoginHandler();
+		loginHandler.login();
 	}
 }

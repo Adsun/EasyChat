@@ -1,6 +1,6 @@
 package com.adsun.chat.message;
 
-import com.adsun.chat.message.result.ConnectResult;
+import com.adsun.chat.message.result.*;
 
 /**
  * @author fengxiang
@@ -14,7 +14,8 @@ public class MessageConstant {
 	public enum MESSAGE_TYPE {
 		BYTES(0,byte[].class),
 		STRING(1,String.class),
-		CONNECTRESULT(10, ConnectResult.class);
+		CONNECTRESULT(10, ConnectResult.class),
+		LOGINRESULT(11,LoginResult.class);
 
 		private int type;
 		

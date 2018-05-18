@@ -2,9 +2,7 @@ package com.adsun.chat.client.handler;
 
 import com.adsun.chat.client.utils.ServerChannel;
 import com.adsun.chat.message.Message;
-import com.adsun.chat.message.result.ConnectResult;
-import com.alibaba.fastjson.JSON;
-
+import com.adsun.chat.observer.MessageHandlerObserverable;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.channel.ChannelHandler.Sharable;
@@ -15,7 +13,13 @@ import io.netty.channel.ChannelHandler.Sharable;
  */
 @Sharable
 public class ClientChannelHandler extends SimpleChannelInboundHandler<Message>{
-
+	
+	private MessageHandlerObserverable ob;
+	
+	public ClientChannelHandler(MessageHandlerObserverable ob) {
+		this.setOb(ob);
+	}
+	
 	@Override
 	protected void channelRead0(ChannelHandlerContext ctx, Message msg) throws Exception {
 		/*System.out.println(msg.toString());
@@ -34,6 +38,20 @@ public class ClientChannelHandler extends SimpleChannelInboundHandler<Message>{
 	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
 		cause.printStackTrace();
 		ctx.close();
+	}
+
+	/**
+	 * @return the ob
+	 */
+	public MessageHandlerObserverable getOb() {
+		return ob;
+	}
+
+	/**
+	 * @param ob the ob to set
+	 */
+	public void setOb(MessageHandlerObserverable ob) {
+		this.ob = ob;
 	}
 	
 }
