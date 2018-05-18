@@ -15,7 +15,6 @@ import io.netty.channel.ChannelHandler.Sharable;
 @Sharable
 public class ClientChannelHandler extends SimpleChannelInboundHandler<Message>{
 
-	
 	@Override
 	protected void channelRead0(ChannelHandlerContext ctx, Message msg) throws Exception {
 		System.out.println(msg.toString());
