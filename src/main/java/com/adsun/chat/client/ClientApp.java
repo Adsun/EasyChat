@@ -1,6 +1,6 @@
 package com.adsun.chat.client;
 
-import java.util.Scanner;
+import com.adsun.chat.client.handler.LoginHandler;
 
 /**
  * @author fengxiang
@@ -11,18 +11,8 @@ public class ClientApp {
 		/**
 		 * 启动连接server线程
 		 */
-		Thread t1 = new Thread(new ConnectServerRunnable());
+		Thread t1 = new Thread(new ConnectServerRunnable(), "connect");
 		t1.start();
-		while (true) {
-			Scanner sc = new Scanner(System.in);
-			try {
-				String input = sc.nextLine();
-				
-			} finally {
-				sc.close();
-			}
-		}
-		
-		
+		LoginHandler.login();
 	}
 }

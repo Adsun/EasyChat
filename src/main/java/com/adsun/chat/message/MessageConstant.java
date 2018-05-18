@@ -1,5 +1,7 @@
 package com.adsun.chat.message;
 
+import com.adsun.chat.message.result.ConnectResult;
+
 /**
  * @author fengxiang
  * @date 2018年5月17日

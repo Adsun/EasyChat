@@ -1,8 +1,8 @@
 package com.adsun.chat.server.handler;
 
-import com.adsun.chat.message.ConnectResult;
 import com.adsun.chat.message.Message;
 import com.adsun.chat.message.MessageConstant.MESSAGE_TYPE;
+import com.adsun.chat.message.result.ConnectResult;
 import com.adsun.chat.server.utils.ClientConnectMannage;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
