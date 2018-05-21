@@ -1,7 +1,5 @@
 package com.adsun.chat.message.result;
 
-import java.util.Date;
-
 /**
  * @author fengxiang
  * @date 2018年5月17日

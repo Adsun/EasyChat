@@ -13,7 +13,6 @@ public class MessageHandlerObserverable implements Observerable {
 
 	//注意到这个List集合的泛型参数为Observer接口，设计原则：面向接口编程而不是面向实现编程
     private List<Observer> list;
-    private Message message;
     private static MessageHandlerObserverable messageHandlerObserverable = null;
     
     public synchronized static MessageHandlerObserverable getInstance() {
@@ -37,14 +36,10 @@ public class MessageHandlerObserverable implements Observerable {
 		list.remove(o);
 	}
 
-	public void notifyObserver() {
+	public void notifyObserver(Message obj) {
 		for(int i = 0; i < list.size(); i++) {
             Observer oserver = list.get(i);
-            oserver.update(message);
+            oserver.update(obj);
         }
-	}
-	
-	public void setMessage(Message obj) {
-		this.message = obj;
 	}
 }

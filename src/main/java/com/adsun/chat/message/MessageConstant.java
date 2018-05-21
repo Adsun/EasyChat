@@ -15,7 +15,8 @@ public class MessageConstant {
 		BYTES(0,byte[].class),
 		STRING(1,String.class),
 		CONNECTRESULT(10, ConnectResult.class),
-		LOGINRESULT(11,LoginResult.class);
+		LOGINRESULT(11,LoginResult.class),
+		MESSAGERESULT(12,MessageResult.class);
 
 		private int type;
 		

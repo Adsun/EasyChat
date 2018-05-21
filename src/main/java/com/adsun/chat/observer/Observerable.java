@@ -1,5 +1,6 @@
 package com.adsun.chat.observer;
 
+import com.adsun.chat.message.Message;
 
 /**
  * 抽象被观察者接口
@@ -11,6 +12,6 @@ public interface Observerable {
     
     public void registerObserver(Observer o);
     public void removeObserver(Observer o);
-    public void notifyObserver();
+    public void notifyObserver(Message obj);
     
 }

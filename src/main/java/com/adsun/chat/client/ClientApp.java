@@ -15,5 +15,6 @@ public class ClientApp {
 		t1.start();
 		LoginHandler loginHandler = new LoginHandler();
 		loginHandler.login();
+		
 	}
 }
